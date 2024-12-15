@@ -1,47 +1,33 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import BlobButton from "./components/BlobButton";
+import AddQuestionInput from "./components/AddQuestionInput";
 
 const CreateRoom = () => {
-  const [newQuestion, setNewQuestion] = useState("");
-  const [questionsInRoom, setQuestionsInRoom] = useState([]);
+  const { state } = useLocation(); // Access state data passed via navigation
   const navigate = useNavigate();
 
-  const addQuestion = () => {
-    if (newQuestion.trim()) {
-      setQuestionsInRoom([...questionsInRoom, { question: newQuestion }]);
-      setNewQuestion(""); // Clear input after adding a question
-    }
-  };
+  const room_name = state?.room_name || "No room name"; // Room name
+  const room_id = state?.room_id || "Unknown"; // Room ID
 
   const startGameHandler = () => {
     console.log("Game started!");
-    navigate("/");
+    // Navigate to the /room/:roomId route with the roomId
+    navigate(`/room/${room_id}`);
   };
 
   return (
     <div className="create-room-screen">
-      <h1>Room Created!</h1>
-      <p>Oda numarası: {Math.floor(Math.random() * 10000)}</p>
-      <div className="add-question">
-        <input
-          type="text"
-          value={newQuestion}
-          onChange={(e) => setNewQuestion(e.target.value)}
-          placeholder="Yeni soru ekleyin"
-        />
-        <button onClick={addQuestion}>Add Question</button>
-      </div>
-      <div>
-        <h2>Questions in the room:</h2>
-        <ul>
-          {questionsInRoom.map((q, index) => (
-            <li key={index}>{q.question}</li>
-          ))}
-        </ul>
-      </div>
-      <div>
-        <button onClick={startGameHandler}>Oyun Başlat</button>
+      <h1 style={{ fontSize: "3rem" }}>
+        Room {room_id}: {room_name}
+      </h1>
+      <AddQuestionInput room_id={room_id} />
+
+      <div style={{ marginTop: "2rem" }}>
+        <BlobButton
+          buttonText={"Start Game"}
+          onClick={startGameHandler}
+        ></BlobButton>
       </div>
     </div>
   );
