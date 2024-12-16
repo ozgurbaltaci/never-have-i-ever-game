@@ -2,8 +2,9 @@ import React, { useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import "./AddQuestionInput.css";
 
-const AddQuestionInput = ({ room_id }) => {
+const AddQuestionInput = ({ room_id, isExpandable = false }) => {
   const [newQuestion, setNewQuestion] = useState("");
+  const [hasExpandibility, sethasExpandibility] = useState(isExpandable);
 
   const addQuestionToDB = async () => {
     if (!newQuestion.trim()) {
@@ -38,6 +39,15 @@ const AddQuestionInput = ({ room_id }) => {
   };
   return (
     <div className="input-component">
+      <input
+        className="c-checkbox"
+        type="checkbox"
+        id="checkbox"
+        checked={!hasExpandibility}
+        onChange={() => {
+          sethasExpandibility(!hasExpandibility);
+        }}
+      />
       <div className="c-formContainer">
         <form className="c-form" action="">
           <input
