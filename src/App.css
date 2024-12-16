@@ -24,6 +24,11 @@ body {
   ); /* Renkli arka plan */
 }
 
+h1,
+p {
+  margin: 0; /* Tüm marginleri sıfırlar */
+}
+
 .App {
   text-align: center;
   width: 100%;

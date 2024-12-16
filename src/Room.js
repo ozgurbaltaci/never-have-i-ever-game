@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import "./Room.css";
 
 const Room = () => {
   const { roomId } = useParams(); // Get the roomId from the URL
@@ -46,9 +47,8 @@ const Room = () => {
 
   return (
     <div className="room-screen" onClick={nextQuestion}>
-      <h1>Question:</h1>
-      <p>{questions[currentQuestionIndex]?.question}</p>
-      <p>
+      <h1 className="question">{questions[currentQuestionIndex]?.question}</h1>
+      <p className="question-counter">
         Question {currentQuestionIndex + 1} of {questions.length}
       </p>
     </div>
