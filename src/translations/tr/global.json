@@ -1,0 +1,17 @@
+{
+  "game_title": "Hiç Yapmadım",
+  "game_description": "Hazır mısınız? Bu oyun, hiç yapmadığınız şeyleri keşfetmeniz için eğlenceli bir fırsat sunuyor! Arkadaşlarınızla veya kendinizle ne kadar dürüstsünüz?",
+  "create_room": "Oda oluştur",
+  "join_room": "Odaya katıl",
+  "enter_room_name": "Oda ismini girin:",
+  "room_name_empty": "Oda ismi boş olamaz!",
+  "enter_room_id": "Oda numarasını girin:",
+  "room_id_empty": "Oda numarası boş olamaz!",
+  "invalid_room_id": "Geçersiz oda numarası!",
+  "joined_room": "Odaya katıldınız: {{room_id}}",
+  "try_again_error": "Bir hata oluştu. Lütfen tekrar deneyin.",
+  "create_room_error": "Oda oluşturulurken bir hata oluştu.",
+  "create_room_failed": "Oda oluşturulamadı.",
+  "room_created": "Oda başarıyla oluşturuldu:",
+  "your_room_id": "Oda numaranız: {{room_id}}"
+}

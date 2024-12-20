@@ -5,12 +5,15 @@ import CreateRoom from "./CreateRoom";
 import HomePage from "./HomePage";
 import JoinedRoom from "./JoinedRoom";
 import Room from "./Room"; // Import the Room component
+import Navbar from "./NavBar";
 
 function App() {
   const [startGame, setStartGame] = useState(false);
 
   return (
     <Router>
+      <Navbar></Navbar>
+
       <div className="App">
         <Routes>
           <Route path="/" element={<HomePage />} />

@@ -1,0 +1,15 @@
+{
+  "title": "Yo nunca nunca",
+  "description": "¿Listo? Este juego es una oportunidad divertida para descubrir cosas que nunca has hecho. ¿Qué tan honesto eres contigo mismo o con tus amigos?",
+  "createRoom": "Crear una sala",
+  "joinRoom": "Unirse a una sala",
+  "enterRoomName": "Ingrese el nombre de la sala:",
+  "enterRoomNumber": "Ingrese el número de la sala:",
+  "roomJoined": "Te uniste a la sala: ",
+  "invalidRoomNumber": "¡Número de sala no válido!",
+  "errorJoiningRoom": "Ocurrió un error. Inténtalo de nuevo.",
+  "roomNameCannotBeEmpty": "¡El nombre de la sala no puede estar vacío!",
+  "roomNumberPrompt": "Ingrese el número de la sala.",
+  "roomCreated": "Sala creada con éxito:",
+  "yourRoomNumber": "Tu número de sala:"
+}

@@ -1,0 +1,17 @@
+{
+  "game_title": "Never Have I Ever",
+  "game_description": "Are you ready? This game offers a fun opportunity to discover things you've never done before! How honest are you with your friends or yourself?",
+  "create_room": "Create a room",
+  "join_room": "Join a room",
+  "enter_room_name": "Enter the room name:",
+  "room_name_empty": "Room name cannot be empty!",
+  "enter_room_id": "Enter the room ID:",
+  "room_id_empty": "Room ID cannot be empty!",
+  "invalid_room_id": "Invalid room ID!",
+  "joined_room": "You joined the room: {{room_id}}",
+  "try_again_error": "An error occurred. Please try again.",
+  "create_room_error": "Error creating the room.",
+  "create_room_failed": "Failed to create the room.",
+  "room_created": "Room created successfully:",
+  "your_room_id": "Your room ID: {{room_id}}"
+}
