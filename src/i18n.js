@@ -20,6 +20,20 @@ const resources = {
       create_room_failed: "Failed to create the room.",
       room_created: "Room created successfully:",
       your_room_id: "Your room ID: {{room_id}}",
+      start_game: "Start Game",
+      question_empty: "Question cannot be empty!",
+      question_added_successfully: "Question added successfully!",
+      question_add_error: "There was an error adding the question!",
+      error_try_again: "An error occurred. Please try again.",
+      question_placeholder: "Type your question here...",
+      add_question: "Add",
+      toggle_add_question: "Add Question",
+      room_title: "Room {{roomId}}: {{roomName}}", // Room title with placeholders
+      questions_in_room:
+        "There are already {{count}} questions in the room. You can add more questions below.",
+      no_questions_in_room:
+        "There are no questions here. You must add some questions to start the game.",
+      start_game: "Start Game",
     },
   },
 
@@ -41,6 +55,20 @@ const resources = {
       create_room_failed: "Oda oluşturulamadı.",
       room_created: "Oda başarıyla oluşturuldu:",
       your_room_id: "Oda numaranız: {{room_id}}",
+      start_game: "Oyunu Başlat",
+      question_empty: "Soru boş olamaz!",
+      question_added_successfully: "Soru başarıyla eklendi!",
+      question_add_error: "Soruyu eklerken bir hata oluştu!",
+      error_try_again: "Bir hata oluştu. Lütfen tekrar deneyin.",
+      question_placeholder: "Sorunuzu buraya yazın...",
+      add_question: "Ekle",
+      toggle_add_question: "Soru Ekle",
+      room_title: "Oda {{roomId}}: {{roomName}}", // Room title with placeholders
+      questions_in_room:
+        "Odada zaten {{count}} soru var. Daha fazla soru ekleyebilirsiniz.",
+      no_questions_in_room:
+        "Burada hiç soru yok. Oyunu başlatmak için bazı sorular eklemeniz gerekiyor.",
+      start_game: "Oyunu Başlat",
     },
   },
 
@@ -62,6 +90,20 @@ const resources = {
       create_room_failed: "No se pudo crear la sala.",
       room_created: "Sala creada con éxito:",
       your_room_id: "Tu número de sala: {{room_id}}",
+      start_game: "Comenzar el Juego",
+      question_empty: "¡La pregunta no puede estar vacía!",
+      question_added_successfully: "¡Pregunta agregada con éxito!",
+      question_add_error: "¡Hubo un error al agregar la pregunta!",
+      error_try_again: "Ocurrió un error. Por favor, inténtelo de nuevo.",
+      question_placeholder: "Escribe tu pregunta aquí...",
+      add_question: "Agregar",
+      toggle_add_question: "Agregar pregunta",
+      room_title: "Sala {{roomId}}: {{roomName}}", // Room title with placeholders
+      questions_in_room:
+        "Ya hay {{count}} preguntas en la sala. Puedes agregar más preguntas a continuación.",
+      no_questions_in_room:
+        "No hay preguntas aquí. Debes agregar algunas preguntas para comenzar el juego.",
+      start_game: "Iniciar Juego",
     },
   },
 };

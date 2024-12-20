@@ -1,11 +1,13 @@
-import React, { useState } from "react";
+import React from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import BlobButton from "./components/BlobButton";
 import AddQuestionInput from "./components/AddQuestionInput";
+import { useTranslation } from "react-i18next"; // Import useTranslation
 
 const CreateRoom = () => {
   const { state } = useLocation(); // Access state data passed via navigation
   const navigate = useNavigate();
+  const { t } = useTranslation(); // Destructure the t function from useTranslation
 
   const room_name = state?.room_name || "No room name"; // Room name
   const room_id = state?.room_id || "Unknown"; // Room ID
@@ -19,13 +21,13 @@ const CreateRoom = () => {
   return (
     <div className="create-room-screen">
       <h1 style={{ fontSize: "3rem" }}>
-        Room {room_id}: {room_name}
+        {t("room_created")} {room_id}: {room_name}
       </h1>
       <AddQuestionInput room_id={room_id} />
 
       <div style={{ marginTop: "2rem" }}>
         <BlobButton
-          buttonText={"Start Game"}
+          buttonText={t("start_game")} // Use the translation key for the button
           onClick={startGameHandler}
         ></BlobButton>
       </div>

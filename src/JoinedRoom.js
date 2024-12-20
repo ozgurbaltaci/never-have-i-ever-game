@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next"; // Import useTranslation
 import AddQuestionInput from "./components/AddQuestionInput";
 import BlobButton from "./components/BlobButton";
 
 const JoinedRoom = () => {
   const location = useLocation(); // Access the room data passed via the navigation state
   const navigate = useNavigate();
+  const { t } = useTranslation(); // Get the translation function
 
   const [room_id] = useState(location.state.room_id); // Room ID from state
   const [room_name] = useState(location.state.room_name); // Room Name from state
@@ -41,19 +43,20 @@ const JoinedRoom = () => {
   return (
     <div className="joined-room-screen">
       <h1 style={{ fontSize: "3rem" }}>
-        Room {room_id}: {room_name}
+        {t("room_title", { roomId: room_id, roomName: room_name })}{" "}
+        {/* Translated room title */}
       </h1>
 
       <div style={{ fontSize: "16px" }}>
         {questionsCount > 0 ? (
           <p>
-            There are already ({questionsCount}) questions in the room. You can
-            add more questions below.
+            {t("questions_in_room", { count: questionsCount })}{" "}
+            {/* Translated message */}
           </p>
         ) : (
           <p>
-            There are no questions here. You must add some questions to start
-            the game.
+            {t("no_questions_in_room")}{" "}
+            {/* Translated message for no questions */}
           </p>
         )}
       </div>
@@ -64,7 +67,7 @@ const JoinedRoom = () => {
 
       <div>
         <BlobButton
-          buttonText={"Start Game"}
+          buttonText={t("start_game")}
           onClick={startGameHandler}
           disabled={questionsCount === 0}
         ></BlobButton>

@@ -1,14 +1,16 @@
 import React, { useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next"; // Import useTranslation
 import "./AddQuestionInput.css";
 
 const AddQuestionInput = ({ room_id, isExpandable = false }) => {
   const [newQuestion, setNewQuestion] = useState("");
-  const [hasExpandibility, sethasExpandibility] = useState(isExpandable);
+  const [hasExpandibility, setHasExpandibility] = useState(isExpandable);
+  const { t } = useTranslation(); // Get the translation function
 
   const addQuestionToDB = async () => {
     if (!newQuestion.trim()) {
-      alert("Soru boş olamaz!");
+      alert(t("question_empty")); // Use the translation key for empty question
       return;
     }
 
@@ -27,16 +29,17 @@ const AddQuestionInput = ({ room_id, isExpandable = false }) => {
       );
 
       if (response.ok) {
-        alert("Soru başarıyla eklendi!");
+        alert(t("question_added_successfully")); // Success message
         setNewQuestion(""); // Clear the input field after adding the question
       } else {
-        alert("Soruyu eklerken bir hata oluştu!");
+        alert(t("question_add_error")); // Error message
       }
     } catch (error) {
       console.error("Error adding question:", error);
-      alert("Bir hata oluştu. Lütfen tekrar deneyin.");
+      alert(t("error_try_again")); // Generic error message
     }
   };
+
   return (
     <div className="input-component">
       <input
@@ -45,7 +48,7 @@ const AddQuestionInput = ({ room_id, isExpandable = false }) => {
         id="checkbox"
         checked={!hasExpandibility}
         onChange={() => {
-          sethasExpandibility(!hasExpandibility);
+          setHasExpandibility(!hasExpandibility);
         }}
       />
       <div className="c-formContainer">
@@ -53,7 +56,7 @@ const AddQuestionInput = ({ room_id, isExpandable = false }) => {
           <input
             className="c-form__input"
             onChange={(e) => setNewQuestion(e.target.value)}
-            placeholder="Type your question here..."
+            placeholder={t("question_placeholder")} // Use translation for placeholder
             required
           />
           <label className="c-form__buttonLabel" htmlFor="checkbox">
@@ -62,13 +65,13 @@ const AddQuestionInput = ({ room_id, isExpandable = false }) => {
               type="button"
               onClick={addQuestionToDB}
             >
-              Add
+              {t("add_question")} {/* Button text translation */}
             </button>
           </label>
           <label
             className="c-form__toggle"
             htmlFor="checkbox"
-            data-title="Add Question"
+            data-title={t("toggle_add_question")}
           ></label>
         </form>
       </div>
